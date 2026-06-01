@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>С днем рождения, Ангелина</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-1: #ffe7ec;
+      --bg-2: #ffd3d0;
+      --bg-3: #fff7e8;
+      --phone-dark: #151515;
+      --card-1: #fff9fb;
+      --card-2: #ffffff;
+      --accent: #ff5f88;
+      --accent-2: #ff9f68;
+      --text: #2a1e24;
+      --soft: #7a5f6c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      font-family: "Montserrat", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 20%, #ffffffaa 0, #ffffff00 45%),
+        radial-gradient(circle at 85% 80%, #ffffffaa 0, #ffffff00 40%),
+        linear-gradient(145deg, var(--bg-1), var(--bg-2) 45%, var(--bg-3));
+      overflow: hidden;
+    }
+
+    .hearts,
+    .hearts::before,
+    .hearts::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle at 15% 25%, #ff80a680 0 7px, #0000 8px),
+        radial-gradient(circle at 80% 15%, #ffb08c66 0 6px, #0000 7px),
+        radial-gradient(circle at 35% 75%, #ff6f9f66 0 5px, #0000 6px),
+        radial-gradient(circle at 60% 60%, #ff956f55 0 8px, #0000 9px);
+      animation: drift 11s linear infinite;
+    }
+
+    .hearts::before {
+      animation-duration: 14s;
+      filter: blur(1px);
+      opacity: 0.7;
+    }
+
+    .hearts::after {
+      animation-duration: 17s;
+      opacity: 0.5;
+    }
+
+    @keyframes drift {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .phone {
+      width: min(92vw, 370px);
+      height: min(88vh, 760px);
+      border-radius: 40px;
+      padding: 10px;
+      background: linear-gradient(160deg, #2a2a2a, #0f0f0f);
+      box-shadow:
+        0 18px 40px #3a13273d,
+        inset 0 0 0 1px #ffffff30;
+      position: relative;
+      z-index: 2;
+    }
+
+    .screen {
+      height: 100%;
+      border-radius: 32px;
+      background: linear-gradient(180deg, var(--card-1), var(--card-2));
+      overflow: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 26px 18px 28px;
+      position: relative;
+    }
+
+    .screen::-webkit-scrollbar {
+      display: none;
+    }
+
+    .notch {
+      width: 128px;
+      height: 24px;
+      border-radius: 999px;
+      background: #0d0d0d;
+      margin: 0 auto 18px;
+      box-shadow: inset 0 -2px 4px #ffffff10;
+    }
+
+    .title {
+      text-align: center;
+      font-family: "Marck Script", cursive;
+      font-size: clamp(34px, 7.5vw, 42px);
+      margin: 6px 0 14px;
+      color: #4a2d3c;
+      line-height: 1;
+    }
+
+    .photo-wrap {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 22px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      border: 2px solid #ffd4df;
+      background: #fff;
+      box-shadow: 0 10px 18px #ff9f6840;
+    }
+
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .chip {
+      margin: 0 auto 16px;
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      color: #7c3d56;
+      background: linear-gradient(90deg, #ffdbe5, #ffe4d0);
+      border: 1px solid #ffc7d7;
+    }
+
+    .message {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text);
+      background: #ffffffcc;
+      border: 1px solid #ffe2ea;
+      border-radius: 16px;
+      padding: 14px 14px;
+      box-shadow: inset 0 0 0 1px #ffffffc7;
+    }
+
+    .message p {
+      margin: 0 0 10px;
+    }
+
+    .message p:last-child {
+      margin-bottom: 0;
+      color: var(--soft);
+      font-weight: 600;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #8d6f7b;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts"></div>
+
+  <main class="phone">
+    <section class="screen">
+      <div class="notch"></div>
+
+      <h1 class="title">Ангелина</h1>
+
+      <div class="photo-wrap">
+        <!-- ВСТАВКА ФОТО: замени src на путь к вашему фото -->
+        <img src="assets/photo-placeholder.svg" alt="Фото Ангелины" />
+      </div>
+
+      <div class="chip">С днем рождения, моя любовь</div>
+
+      <article class="message">
+        <p>
+          Пусть этот день будет таким же теплым и ярким, как твоя улыбка.
+          Спасибо тебе за нежность, поддержку и счастье, которое ты даришь каждый день.
+        </p>
+        <p>
+          Желаю тебе радости, вдохновения и исполнения всех мечт. Я рядом и люблю тебя бесконечно.
+        </p>
+        <p>Твой любимый.</p>
+      </article>
+
+      <div class="footer">Сделано с любовью специально для тебя</div>
+    </section>
+  </main>
+</body>
+</html>
