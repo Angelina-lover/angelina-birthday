@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>С днем рождения, Котёночек</title>
+  <title>С днем рождения, Котёночек ❤️</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -216,7 +216,7 @@
 <body>
   <main class="wrap">
     <section class="hero">
-      <span class="tag">С днем рождения, Котёночек</span>
+      <span class="tag">С днем рождения, Котёночек ❤️</span>
       <p class="subtitle">Этот сайт сделан для тебя с любовью. Пусть каждый день приносит тебе тепло, улыбки и вдохновение.</p>
 
       <div class="note">
@@ -238,15 +238,18 @@
       <div class="slider-box" id="moments-slider">
         <div class="slider-viewport">
           <button class="slider-btn prev" type="button" aria-label="Предыдущее фото">‹</button>
-          <!-- ДОБАВЛЕНИЕ ФОТО:
-               1) скопируй строку img ниже
-               2) поставь свой src (например assets/photo3.jpg)
-               3) в data-caption напиши подпись к этому фото -->
-          <img class="slide active" src="assets/photo-placeholder.svg" alt="Наше фото 1" data-caption="Подпись к фото №1" />
-          <img class="slide" src="assets/photo-placeholder.svg" alt="Наше фото 2" data-caption="Подпись к фото №2" />
+          <img class="slide active" src="https://cdn.discordapp.com/attachments/921750208545714246/1511030241303466034/IMG_20260526_001700_581.jpg?ex=6a1ef813&amp;is=6a1da693&amp;hm=ba0c346224432fb809ff86677fc7fdf41c6902dc637aa200d24ab2bc01ac1905&amp;" alt="Наше фото 1" data-caption="Вот смотри, мы тут соединились с тобой в парочку Минончиков." />
+          <img class="slide" src="https://cdn.discordapp.com/attachments/921750208545714246/1511030308190032002/IMG_20260303_131344.jpg?ex=6a1ef823&amp;is=6a1da6a3&amp;hm=afb453752b07e40c49bb3e2836e70dd8c55db4ffa2dcbbc8b1a8067f9599ac34&amp;" alt="Наше фото 2" data-caption="Тута это наше первое фото, не забуду его, я так рад был, блин, это так мило все." />
+          <img class="slide" src="https://cdn.discordapp.com/attachments/921750208545714246/1511030268788477992/IMG_20260414_232242_714.jpg?ex=6a1ef819&amp;is=6a1da699&amp;hm=519b0404731ab5a11ee48da781f1a7971bc1b60ffce6426800332dc29998d678&amp;" alt="Наше фото 3" data-caption="Это мы красиво тут прощаемся с тобой, целовашки наши любимые." />
+          <img class="slide" src="https://cdn.discordapp.com/attachments/921750208545714246/1511030269140926615/IMG_20260414_232041_261.jpg?ex=6a1ef819&amp;is=6a1da699&amp;hm=c3483fcf28f7e0195c3ac618c3c33e0f90202a72dd9ce88c4f0145062e1a4b4f&amp;" alt="Наше фото 4" data-caption="А тут вот тоже прощалки, но уже обнимашкеееее, милота, блин 🥹" />
+          <img class="slide" src="https://cdn.discordapp.com/attachments/921750208545714246/1511030268453195898/MVIMG_20260507_195713.jpg?ex=6a1ef819&amp;is=6a1da699&amp;hm=f86847f27955ee8dc60bc8787a5f2fddee73aeb85114697d00eb508a8754da2c&amp;" alt="Наше фото 5" data-caption="А тута мы круто гуляем и фотаем закатик и котека." />
+          <img class="slide" src="https://cdn.discordapp.com/attachments/921750208545714246/1511030242586923259/IMG_20260516_220523_186.jpg?ex=6a1ef813&amp;is=6a1da693&amp;hm=3e7d5ffc37676bf588a12f62d245c62b0bbd294d30aa5be2c7bfc6bd85e8b33c&amp;" alt="Наше фото 6" data-caption="Вот тут круто котик сфоткал вкусни леденец, и да, как же тебя тогда вынесло, милашку мою." />
+          <video class="slide" playsinline controls preload="metadata" data-caption="А тут вообще у нас видосик прощания, как же ты круто сделала этот эдитик 🥹">
+            <source src="https://cdn.discordapp.com/attachments/921750208545714246/1511030308558868580/5d95e40ba48fa91a2a577d9dc6722149.mp4?ex=6a1ef823&amp;is=6a1da6a3&amp;hm=38295b3df7fe6663d9a0760bcf924dda75b081932867197fd203984edd4a14f3&amp;" type="video/mp4" />
+          </video>
           <button class="slider-btn next" type="button" aria-label="Следующее фото">›</button>
         </div>
-        <p class="photo-caption" id="slider-caption">Подпись к фото №1</p>
+        <p class="photo-caption" id="slider-caption">Вот смотри, мы тут соединились с тобой в парочку Минончиков.</p>
       </div>
 
       <p class="final">С любовью твой котек ❤️</p>
@@ -267,6 +270,10 @@
       function render() {
         slides.forEach((slide, index) => {
           slide.classList.toggle("active", index === current);
+          if (index !== current && slide.tagName === "VIDEO") {
+            slide.pause();
+            slide.currentTime = 0;
+          }
         });
         caption.textContent = slides[current].dataset.caption || "";
       }
