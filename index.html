@@ -120,6 +120,43 @@
       font-weight: 600;
     }
 
+    .gallery-title {
+      margin: 16px 0 10px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #5d3247;
+    }
+
+    .gallery {
+      display: grid;
+      gap: 12px;
+    }
+
+    .gallery-item {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-caption {
+      margin: 0;
+      padding: 10px 12px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #6b4f5b;
+      background: #fff9fc;
+      border-top: 1px solid #ffe2ea;
+    }
+
     @keyframes show {
       from {
         opacity: 0;
@@ -154,16 +191,31 @@
 
       <div class="note">
         <div class="note-item">
-          Спасибо тебе за нежность, заботу и свет, который ты даришь мне каждый день.
+          И так же я хочу сказать, что очень благодарен за все, что ты делаешь, и буду дарить тебе свою любовь всегда.
         </div>
         <div class="note-item">
-          Я желаю тебе счастья, исполнения мечт и самых ярких эмоций. Очень сильно люблю тебя.
+          Буду рядом в самые веселые и в самые трудные моменты и сделаю все, что могу, чтобы ты была счастлива, и даже больше, если оно того потребуется.
+        </div>
+        <div class="note-item">
+          В общем, сделаю все, чтобы ты видела, как я тебя люблю и дорожу тобой.
         </div>
       </div>
 
-      <div class="photo-card">
-        <!-- ВСТАВКА ФОТО: замени src на путь к вашему фото, например assets/angelina.jpg -->
-        <img src="assets/photo-placeholder.svg" alt="Фото Котёночка" />
+      <h2 class="gallery-title">Наши моменты вместе</h2>
+      <div class="gallery">
+        <figure class="gallery-item">
+          <!-- ФОТО 1: замени src на путь к фото, например assets/photo1.jpg -->
+          <img src="assets/photo-placeholder.svg" alt="Наше фото 1" />
+          <!-- ПОДПИСЬ К ФОТО 1 -->
+          <figcaption class="photo-caption">Подпись к фото №1</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <!-- ФОТО 2: можешь добавлять сколько угодно таких блоков figure -->
+          <img src="assets/photo-placeholder.svg" alt="Наше фото 2" />
+          <!-- ПОДПИСЬ К ФОТО 2 -->
+          <figcaption class="photo-caption">Подпись к фото №2</figcaption>
+        </figure>
       </div>
 
       <p class="final">Твой Котик</p>
